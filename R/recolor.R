@@ -22,7 +22,6 @@ recolor_s <- function(mapRes_sub, obj, output, color = NULL)
 {
 	## recolor_s will call function gg_colr_hue.
 	message(paste0("recolor ", output))
-	message("test message")
 
 
 	if (is.null(names(mapRes_sub))) stop("There is no name of mapRes_sub.")
@@ -62,7 +61,7 @@ recolor_s <- function(mapRes_sub, obj, output, color = NULL)
 	png_plot1 <- DimPlot(obj, label = T, label.size = 8, group.by = 'regroup',
 			reduction = "tsne",
 			cols = color[sort(as.numeric(unique(new_group)))]) +
-		ggsave(plot = png_plog1, filename = paste0(output, '.recolor.tsne.png'))
+		ggsave(plot = png_plot1, filename = paste0(output, '.recolor.tsne.png'))
 
 	pdf_plot1 <- DimPlot(obj, label = T, label.size = 8, group.by = 'regroup',
 			reduction = "tsne",
