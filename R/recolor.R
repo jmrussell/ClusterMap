@@ -58,10 +58,10 @@ recolor_s <- function(mapRes_sub, obj, output, color = NULL)
 	   message("Using Seurat v3")
 	   if (is.null(color)) color <- gg_color_hue(length(levels(new_group)))
 
-	png_plot1 <- DimPlot(obj, label = T, label.size = 8, group.by = 'regroup',
+	 DimPlot(obj, label = T, label.size = 8, group.by = 'regroup',
 			reduction = "tsne",
 			cols = color[sort(as.numeric(unique(new_group)))]) +
-		ggsave(plot = png_plot1, filename = paste0(output, '.recolor.tsne.png'))
+		ggsave(filename = paste0(output, 'test.recolor.tsne.png'))
 
 	pdf_plot1 <- DimPlot(obj, label = T, label.size = 8, group.by = 'regroup',
 			reduction = "tsne",
